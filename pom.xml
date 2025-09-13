@@ -87,6 +87,7 @@
             <id>jitpack.io</id>
             <url>https://jitpack.io</url>
         </repository>
+
     </repositories>
 
     <dependencies>
@@ -109,6 +110,7 @@
             <version>3.0.2</version>
             <scope>compile</scope>
         </dependency>
+
     </dependencies>
 
     <distributionManagement>

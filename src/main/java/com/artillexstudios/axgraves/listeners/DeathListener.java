@@ -4,6 +4,7 @@ import com.artillexstudios.axgraves.api.events.GravePreSpawnEvent;
 import com.artillexstudios.axgraves.api.events.GraveSpawnEvent;
 import com.artillexstudios.axgraves.grave.Grave;
 import com.artillexstudios.axgraves.grave.SpawnedGraves;
+import com.artillexstudios.axgraves.integrations.EliteMobsIntegration;
 import com.artillexstudios.axgraves.utils.ExperienceUtils;
 import com.artillexstudios.axgraves.utils.WorldUtils;
 import org.bukkit.Bukkit;
@@ -30,6 +31,10 @@ public class DeathListener implements Listener {
 
         Player player = event.getEntity();
         if (!player.hasPermission("axgraves.allowgraves")) return;
+
+        // Check if player is in an EliteMobs dungeon - if so, don't create a grave
+        // This allows EliteMobs' spectator mode and revival system to work properly
+        if (EliteMobsIntegration.isInDungeon(player)) return;
 
         if (player.getLastDamageCause() != null && CONFIG.getStringList("blacklisted-death-causes").contains(player.getLastDamageCause().getCause().name())) return;
         if (player.getInventory().isEmpty() && player.getTotalExperience() == 0) return;
