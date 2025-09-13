@@ -87,10 +87,7 @@
             <id>jitpack.io</id>
             <url>https://jitpack.io</url>
         </repository>
-        <repository>
-            <id>elitemobs-repo</id>
-            <url>https://repo.magmaguy.com/releases</url>
-        </repository>
+
     </repositories>
 
     <dependencies>
@@ -113,13 +110,7 @@
             <version>3.0.2</version>
             <scope>compile</scope>
         </dependency>
-        <dependency>
-            <groupId>com.magmaguy</groupId>
-            <artifactId>EliteMobs</artifactId>
-            <version>9.1.9</version>
-            <scope>provided</scope>
-            <optional>true</optional>
-        </dependency>
+
     </dependencies>
 
     <distributionManagement>
