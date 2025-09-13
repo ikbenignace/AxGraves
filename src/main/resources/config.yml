@@ -123,5 +123,12 @@ update-notifier:
   # if enabled, it will broadcast the update message to all players who have the <plugin-name>.update-notify permission
   on-join: true
 
+# plugin integrations
+integrations:
+  # EliteMobs integration - prevents graves from spawning during dungeon gameplay
+  # where players enter spectator mode and can be revived
+  elitemobs:
+    enabled: true
+
 # do not edit
 version: 15
